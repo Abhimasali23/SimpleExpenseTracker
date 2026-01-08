@@ -19,6 +19,11 @@ public class ExpenseController {
     @Autowired
     private ExpenseService service;
 
+    @GetMapping("/health")
+    public String health() {
+        return "OK";
+    }
+
     @GetMapping
     public ResponseEntity<List<Expense>> getAllExpense() {
         return ResponseEntity.ok(service.getAllExpense());
